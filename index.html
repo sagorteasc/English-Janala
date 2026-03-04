@@ -7,6 +7,7 @@
     <title>English Janala</title>
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
 
+    <script src="https://kit.fontawesome.com/130209f2ad.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
@@ -54,7 +55,7 @@
 
         <!-- banner section-->
         <div class="hero max-w-[1760px] mx-auto">
-            <div class="hero-content flex-col justify-between md:mt-10 md:flex-row-reverse">
+            <div class="hero-content flex-col justify-between mb-8 md:mt-10 md:flex-row-reverse md:mb-14 lg:mb-20">
                 <div class="text-center lg:text-left">
                     <img src="assets/hero-student.png" alt="">
                 </div>
@@ -80,12 +81,36 @@
     </header>
 
     <main>
+        <!-- learn Vocabularies section -->
+        <section>
+            <h3 class="font-bold text-2xl text-center mb-8 md:text-4xl"><span class="text-[#00BCFF]">Let's</span> Learn
+                Vocabularies
+            </h3>
+            <!-- buttons -->
+            <div id="default-btns"
+                class="max-w-[1760px] mx-auto flex gap-4 justify-center items-center mb-10 flex-wrap"></div>
+        </section>
 
+        <!-- card section -->
+        <section class="bg-[#F8F8F8] max-w-[1760px] mx-auto text-center rounded-3xl mb-32">
+            <div id="category-text-container" class="py-20 flex flex-col justify-center items-center">
+                <h4 class="hind-siliguri text-[#79716B] mb-3 text-sm">আপনি এখনো কোন Lesson Select করেন নাই</h4>
+                <h2 class="hind-siliguri text-[#292524] font-medium text-3xl md:text-4xl">একটি Lesson Select করুন।
+                </h2>
+            </div>
+            <div id="category-container"
+                class="grid grid-cols-1 gap-4 py-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
+            </div>
+        </section>
     </main>
 
     <footer>
 
     </footer>
+
+    <!-- js file connections -->
+    <script src="js/default-btns.js"></script>
+    <script src="js/btn-based-category.js"></script>
 </body>
 
 </html>
