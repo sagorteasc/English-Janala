@@ -15,10 +15,9 @@ const displayBtns = (data) => {
 
     data.forEach(btn => {
         const btnDiv = document.createElement('div');
-        // console.log(btn.level_no);
+        console.log(btn.level_no);
         btnDiv.innerHTML = `
-        <button onclick="categories(${btn.level_no})" class="btn categoryBtn text-[#422AD5] font-semibold text-sm border border-[#422AD5] rounded"><img
-                            src="assets/fa-book-open.png" alt="">Lesson -${btn.level_no}</button>
+        <button id="btn-${btn.level_no}" onclick="categories(${btn.level_no})" class="btn categoryBtn text-[#422AD5] font-semibold text-sm border border-[#422AD5] rounded"><i class="fa-solid fa-book-open"></i>Lesson -${btn.level_no}</button>
     `
         defaultBtns.appendChild(btnDiv);
     });

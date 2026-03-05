@@ -1,8 +1,24 @@
+// remove active button 
+const nonActiveBtnDisplay = () => {
+    const nonActiveBtn = document.getElementsByClassName('categoryBtn');
+    for (const btn of nonActiveBtn) {
+
+        btn.classList.remove('bg-[#00BCFF]', 'text-white', 'border-white');
+    }
+}
+
 // categories
 const categories = async (level) => {
+
+    nonActiveBtnDisplay();
+
+    // active btn 
+    const activeBtn = document.getElementById(`btn-${level}`);
+    activeBtn.classList.add('bg-[#00BCFF]', 'text-white', 'border-white');
+
     const res = await fetch(`https://openapi.programming-hero.com/api/level/${level}`)
     const data = await res.json()
-    displayCategories(data.data)
+    displayCategories(data.data);
 }
 
 // display categories
