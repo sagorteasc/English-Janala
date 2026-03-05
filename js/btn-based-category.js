@@ -1,32 +1,29 @@
-// remove active button 
-const nonActiveBtnDisplay = () => {
-    const nonActiveBtn = document.getElementsByClassName('categoryBtn');
-    for (const btn of nonActiveBtn) {
-
-        btn.classList.remove('bg-[#00BCFF]', 'text-white', 'border-white');
-    }
-}
-
 // categories
 const categories = async (level) => {
 
+    showSpiner();
     nonActiveBtnDisplay();
 
     // active btn 
     const activeBtn = document.getElementById(`btn-${level}`);
     activeBtn.classList.add('bg-[#00BCFF]', 'text-white', 'border-white');
 
-    const res = await fetch(`https://openapi.programming-hero.com/api/level/${level}`)
-    const data = await res.json()
-    displayCategories(data.data);
+    document.getElementById('category-text-container').classList.add('hidden');
+    document.getElementById('category-container').innerHTML = '';
+
+    // adding delay
+    setTimeout(async () => {
+        const res = await fetch(`https://openapi.programming-hero.com/api/level/${level}`)
+        const data = await res.json()
+        displayCategories(data.data);
+        removeSpinner();
+    }, 2000);
 }
 
 // display categories
 const displayCategories = (category) => {
     // console.log(category);
     const categoryContainer = document.getElementById('category-container');
-    const categoryTextContainer = document.getElementById('category-text-container');
-    categoryTextContainer.classList.add('hidden');
     categoryContainer.innerHTML = '';
 
 

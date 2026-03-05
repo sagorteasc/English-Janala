@@ -1,3 +1,4 @@
+// load buttons
 const categoryDefaultBtns = async () => {
     try {
         const res = await fetch('https://openapi.programming-hero.com/api/levels/all')
@@ -9,6 +10,7 @@ const categoryDefaultBtns = async () => {
     }
 }
 
+// display buttons
 const displayBtns = (data) => {
     // console.log(data);
     const defaultBtns = document.getElementById('default-btns');
@@ -21,7 +23,15 @@ const displayBtns = (data) => {
     `
         defaultBtns.appendChild(btnDiv);
     });
+}
 
+// remove active button 
+const nonActiveBtnDisplay = () => {
+    const nonActiveBtn = document.getElementsByClassName('categoryBtn');
+    for (const btn of nonActiveBtn) {
+
+        btn.classList.remove('bg-[#00BCFF]', 'text-white', 'border-white');
+    }
 }
 
 categoryDefaultBtns();
