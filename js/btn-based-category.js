@@ -49,11 +49,11 @@ const displayCategories = (category) => {
         vocabularyDiv.innerHTML = `
                 <div class="bg-base-100 w-[320px] rounded-xl shadow-sm md:w-[450px] lg:w-[420px]">
                     <div class="card-body text-center">
-                        <h2 class="font-bold text-[32px] mb-6">${vocabulary.word}</h2>
+                        <h2 class="font-bold text-[32px] mb-6">${vocabulary.word ? vocabulary.word : "Not Available"}</h2>
                         <p class="poppins font-medium text-xl mb-6">Meaning /Pronounciation</p>
-                        <p class="hind-siliguri font-black text-xl opacity-80 mb-14 md:whitespace-nowrap lg:text-lg">${vocabulary.meaning} / ${vocabulary.pronunciation}</p>
+                        <p class="hind-siliguri font-black text-xl opacity-80 mb-14 md:whitespace-nowrap lg:text-lg">"${vocabulary.meaning ? vocabulary.meaning : "Not Available"} / ${vocabulary.pronunciation ? vocabulary.pronunciation : "Not Available"}"</p>
                         <div class="card-actions justify-between">
-                            <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-circle-info"></i></button>
+                            <button onclick="wordDetails(${vocabulary.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-circle-info"></i></button>
                             <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-volume-high"></i></button>
                         </div>
                     </div>
