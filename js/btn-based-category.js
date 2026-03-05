@@ -6,7 +6,7 @@ const categories = async (level) => {
 
     // active btn 
     const activeBtn = document.getElementById(`btn-${level}`);
-    activeBtn.classList.add('bg-[#00BCFF]', 'text-white', 'border-white');
+    activeBtn.classList.add('bg-[#422AD5]', 'text-white', 'border-white');
 
     document.getElementById('category-text-container').classList.add('hidden');
     document.getElementById('category-container').innerHTML = '';
@@ -22,11 +22,10 @@ const categories = async (level) => {
 
 // display categories
 const displayCategories = (category) => {
-    // console.log(category);
     const categoryContainer = document.getElementById('category-container');
     categoryContainer.innerHTML = '';
 
-
+    // check length
     if (category.length === 0) {
         categoryContainer.classList.remove('grid');
         categoryContainer.innerHTML = `
@@ -37,13 +36,12 @@ const displayCategories = (category) => {
                 </div>
             `
     }
+
     else {
         categoryContainer.classList.add('grid');
     }
 
     category.forEach(vocabulary => {
-        // console.log(vocabulary);
-
         const vocabularyDiv = document.createElement('div');
 
         vocabularyDiv.innerHTML = `
