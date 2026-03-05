@@ -52,7 +52,7 @@ const displayCategories = (category) => {
                         <p class="hind-siliguri font-black text-xl opacity-80 mb-14 md:whitespace-nowrap lg:text-lg">"${vocabulary.meaning ? vocabulary.meaning : "Not Available"} / ${vocabulary.pronunciation ? vocabulary.pronunciation : "Not Available"}"</p>
                         <div class="card-actions justify-between">
                             <button onclick="wordDetails(${vocabulary.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-circle-info"></i></button>
-                            <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-volume-high"></i></button>
+                            <button onclick="pronounceWord('${vocabulary.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF70]"><i class="fa-solid fa-volume-high"></i></button>
                         </div>
                     </div>
                 </div>
